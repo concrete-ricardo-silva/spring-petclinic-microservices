@@ -28,7 +28,7 @@ Dashboard do kubernetes:
 
 rodar o comando: kubectl proxy &
 rodar o comando : kubectl config view | grep -A10 "name: $(kubectl config current-context)" | awk '$1=="access-token:"{print $2}'
-acessar localhost:8001 e escolher a opcao token, e colocar o token resultado do comando acima
+acessar a página localhost:8001/ui e escolher a opcao token, e colocar o token resultado do comando acima
 
 Acessar o CI:
 
