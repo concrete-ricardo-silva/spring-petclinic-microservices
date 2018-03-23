@@ -1,5 +1,9 @@
 node {
     checkout scm
-    maven: 'Maven'
-    sh("mvn clean install -PbuildDocker")
-}
+    stage ('Build') {
+      withMaven(maven: 'Maven')
+      { 
+        sh "mvn clean install -PbuildDocker" 
+      }
+    }
+  }
