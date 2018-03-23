@@ -26,8 +26,8 @@ kubectl get services --namespace jenkins
 
 Dashboard do kubernetes:
 
-kubectl proxy &
-rodar : kubectl config view | grep -A10 "name: $(kubectl config current-context)" | awk '$1=="access-token:"{print $2}'
+rodar o comando: kubectl proxy &
+rodar o comando : kubectl config view | grep -A10 "name: $(kubectl config current-context)" | awk '$1=="access-token:"{print $2}'
 acessar localhost:8001 e escolher a opcao token, e colocar o token resultado do comando acima
 
 Acessar o CI:
