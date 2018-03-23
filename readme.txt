@@ -7,7 +7,7 @@ Ativar Google Kubernetes Engine API
 Clonar o repo:
 
 entrar no diretorio do terraform/enviroments/dev
-Definir projeto e região no connections.tf
+Definir projeto e região no connections.tf e terraform.tfvars
 remover o terraform.tfstate.backup e o terraform.tfstate (coloquei no gitignore mas nao ta rolando)
 terraform init
 terraform plan
