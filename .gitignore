@@ -12,3 +12,12 @@ target/
 
 # Branch switching
 generated/
+
+# Terraform
+.terraform/enviroments/dev/terraform.tfstate.backup
+.terraform/enviroments/dev/terraform.tfstate
+.terraform/enviroments/dev/connections.tf
+.terraform/enviroments/dev/terraform.tfstate
+.terraform/enviroments/dev/terraform.tfstate.backup
+.terraform/enviroments/dev/terraform.tfvars
+.terraform/enviroments/dev/variables.tf
