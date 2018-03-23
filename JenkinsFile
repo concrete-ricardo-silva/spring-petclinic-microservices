@@ -1,9 +1,8 @@
 node {
     checkout scm
     stage ('Build') {
-      withMaven(maven: 'Maven')
       { 
-        sh "mvn clean install -PbuildDocker" 
+        sh "/var/jenkins_home/bin/apache-maven-3.5.3/bin/mvn clean install -PbuildDocker" 
       }
     }
   }
