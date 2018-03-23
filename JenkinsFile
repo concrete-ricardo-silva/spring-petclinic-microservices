@@ -1,4 +1,5 @@
 node {
     checkout scm
+    maven: 'Maven'
     sh("mvn clean install -PbuildDocker")
 }
