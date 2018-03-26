@@ -119,7 +119,7 @@
                             <verbose>true</verbose>
                             <dateFormat>yyyy-MM-dd'T'HH:mm:ssZ</dateFormat>
                             <generateGitPropertiesFile>true</generateGitPropertiesFile>
-133                            </goals>
+                            </goals>
                             <generateGitPropertiesFilename>${project.build.outputDirectory}/git.properties
                             </generateGitPropertiesFilename>
                         </configuration>
