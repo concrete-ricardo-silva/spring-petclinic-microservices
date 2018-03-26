@@ -1,5 +1,0 @@
-node {
-  checkout scm
-  stage 'Build image'
-  sh("export DOCKER_HOST=http://localhost:2375 & mvn clean install -PbuildDocker")
-  }
