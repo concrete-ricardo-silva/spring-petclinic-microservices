@@ -1,5 +1,5 @@
 node {
   checkout scm
   stage 'teste tag'
-  sh("docker images --filter=reference='mszarlinski/spring-petclinic-visits-service' | awk '{print $1}''")
+  sh("docker images --filter=reference='mszarlinski/spring-petclinic-visits-service'")
   }
