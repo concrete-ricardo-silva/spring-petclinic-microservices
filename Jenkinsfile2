@@ -1,6 +1,6 @@
 node {
   checkout scm
   stage 'teste tag'
-  sh ("docker tag mszarlinski/spring-petclinic-visits-service $REPOspring-petclinic-visits-service")
+  sh ("docker tag mszarlinski/spring-petclinic-visits-service ${env.REPO}spring-petclinic-visits-service")
   }
 
