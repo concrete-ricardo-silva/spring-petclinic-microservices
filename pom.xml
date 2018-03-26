@@ -144,7 +144,17 @@
                                         <goal>build</goal>
                                     </goals>
                                 </execution>
-                            </executions>
+                            <execution>
+                                <id>push-image</id>
+                                <phase>deploy</phase>
+                                <goals>
+                                <goal>push</goal>
+                                </goals>
+                                <configuration>
+                                <imageName>registry.example.com/my-image:${project.version}</imageName>
+                                </configuration>
+                                </execution>   
+                             </executions>
                             <configuration>
                                 <imageName>${docker.image.prefix}/${project.artifactId}</imageName>
                                 <dockerDirectory>${docker.image.dockerfile.dir}</dockerDirectory>
