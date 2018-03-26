@@ -69,31 +69,5 @@
                 </plugins>
             </build>
         </profile>
-         <profile>
-         <id>push-image</id>
-         <build>
-            <pluginManagement>
-               <plugins>
-                  <plugin>
-                     <groupId>com.spotify</groupId>
-                     <artifactId>docker-maven-plugin</artifactId>
-                     <version>${docker.plugin.version}</version>
-                     <executions>
-                        <execution>          
-                      <phase>deploy</phase>
-                        <goals>
-                          <goal>push</goal>
-                       </goals>
-                    <configuration>
-                      <imageName>${docker.image.prefix}/${project.artifactId}:latest</imageName>
-                    </configuration>
-                        </execution>
-                     </executions>
-                  </plugin>
-               </plugins>
-            </pluginManagement>
-         </build>
-      </profile>
-    </profiles>
-
+      </profiles>
 </project>
