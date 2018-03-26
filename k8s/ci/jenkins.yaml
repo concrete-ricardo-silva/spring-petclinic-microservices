@@ -26,10 +26,9 @@ spec:
     spec:
       containers:
       - name: master
-        image: jenkins/jenkins:2.67
+        image: gcr.io/concrete-198923/jenkins-master
         ports:
         - containerPort: 8080
-        - containerPort: 50000
         readinessProbe:
           httpGet:
             path: /login
@@ -45,21 +44,19 @@ spec:
               name: jenkins
               key: options
         - name: JAVA_OPTS
-          value: '-Xmx1400m'
+          value: '-Xmx4000m'
         volumeMounts:
-        - mountPath: /var/jenkins_home
-          name: jenkins-home
+        - mountPath: /var/run/docker.sock
+          name: docker-socket
         resources:
           limits:
             cpu: 500m
-            memory: 1500Mi
+            memory: 5000Mi
           requests:
             cpu: 500m
-            memory: 1500Mi
+            memory: 5000Mi
       volumes:
-      - name: jenkins-home
-        gcePersistentDisk:
-          pdName: jenkins-home
-          fsType: ext4
-          partition: 1
+      - name: docker-socket
+        hostPath:
+          path: /var/run/docker.sock
 # [END jenkins_deployment]

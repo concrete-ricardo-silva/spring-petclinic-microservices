@@ -1,4 +1,5 @@
 #!/bin/bash
+gcloud container clusters get-credentials jenkins-dev --zone us-central1-a
 kubectl create ns jenkins
 kubectl create secret generic jenkins --from-file=options --namespace=jenkins
 kubectl create clusterrolebinding cluster-admin-binding --clusterrole=cluster-admin --user=$(gcloud config get-value account)
