@@ -1,1 +1,5 @@
-asdasd
+node {
+  checkout scm
+  stage 'teste tag'
+  sh("docker images")
+  }
