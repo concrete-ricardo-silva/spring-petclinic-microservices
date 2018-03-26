@@ -1,5 +1,5 @@
 node {
   checkout scm
   stage 'Build image'
-  sh("export DOCKER_HOST=unix:///var/run/docker.sock & /var/jenkins_home/maven/apache-maven-3.5.3/bin/mvn clean install -PbuildDocker")
+  sh("export DOCKER_HOST=unix:///var/run/docker.sock & mvn clean install -PbuildDocker")
   }
