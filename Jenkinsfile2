@@ -1,7 +1,6 @@
 node {
   checkout scm
   stage 'teste tag'{
-  sh 'visits=mszarlinski/spring-petclinic-visits-service'
-  sh 'echo $visits'
+  sh 'docker tag mszarlinski/spring-petclinic-visits-service gcr.io/concrete-198923/spring-petclinic-visits-service'
   }
 }
