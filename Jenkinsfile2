@@ -1,6 +1,7 @@
 node {
   checkout scm
-  stage 'teste tag'
-  sh("visits=mszarlinski/spring-petclinic-visits-service'")
-  sh("echo $visits")
+  stage 'teste tag'{
+  sh 'visits=mszarlinski/spring-petclinic-visits-service'
+  sh 'echo $visits'
   }
+}
