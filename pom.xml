@@ -151,7 +151,7 @@
                                 <goal>push</goal>
                                 </goals>
                                 <configuration>
-                                <imageName>registry.example.com/my-image:${project.version}</imageName>
+                                <imageName>${docker.image.prefix}/${project.artifactId}:latest</imageName>
                                 </configuration>
                                 </execution>   
                              </executions>
