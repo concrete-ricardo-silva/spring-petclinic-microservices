@@ -37,7 +37,7 @@ resource "google_compute_image" "ci-image" {
   name = "jenkins-home-image"
 
   raw_disk {
-    source = "https://github.com/concrete-felipe-rovai/petclinic/master/blob/jenkins-disk.tar.gz"
+    source = "https://storage.cloud.google.com/jenkins-intervalo/jenkins-disk.tar.gz?hl=pt-br&_ga=2.172208939.-943307725.1521484180&_gac=1.13174917.1521562515.CMm1iYim-9kCFQfODQod2JsOSA"
   }
 }
 
