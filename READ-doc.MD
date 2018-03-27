@@ -83,12 +83,16 @@ gcloud iam service-accounts keys create gce-terraform-key.json --iam-account=ter
 
 
 1. Login no Portal do Google cloud
+![Logon Google Cloud](https://image.ibb.co/cMpfFS/logon.jpg)
 
 2. Vá até APIs e Criar Credencias
+![APIs on Google Cloud](https://image.ibb.co/e0MuaS/apis.jpg)
 
 3. Selecionar **Chave de conta de Serviço**
+![Service Account on Google Cloud](https://image.ibb.co/bSZEaS/serviceaccount.jpg)
 
 4. Adicionar a Conta de serviço 
+![Generate key on Google Cloud](https://image.ibb.co/iAMuaS/terraformaccount.jpg)
 
 5. Fazer download do arquivo.json
 
