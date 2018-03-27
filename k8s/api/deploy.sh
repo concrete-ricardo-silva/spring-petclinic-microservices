@@ -1,4 +1,5 @@
 #!/bin/bash
+alias kubectl="/var/jenkins_home/google-cloud-sdk/bin/kubectl"
 kubectl create -f 1-config-server-deployment.yaml
 kubectl create -f 1-config-server-service.yaml
 kubectl create -f 2-discovery-server-deployment.yaml
