@@ -1,4 +1,4 @@
-## instalando Google Cloud Sdk
+## Instalando Google Cloud Sdk
 
 baixe o instalador em:
 https://cloud.google.com/sdk/?hl=pt-br
