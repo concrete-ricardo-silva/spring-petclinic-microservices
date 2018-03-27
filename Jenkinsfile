@@ -3,6 +3,6 @@ node {
   stage 'Build APPs'
   stage 'Push Images'
   stage 'Deploy'
-    sh './spring-petclinic-microservices/k8s/api/deploy.sh'
+    sh './k8s/api/deploy.sh'
   
 }
