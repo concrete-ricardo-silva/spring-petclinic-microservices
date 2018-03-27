@@ -1,3 +1,13 @@
 # A silly MacOS/OS-X hidden file that is the bane of all repos.
 .DS_Store
-.terraform
+
+### Terraform ###
+# Compiled files
+*.tfstate
+*.tfstate.*
+
+# Module directory
+.terraform/
+
+# .tfvars files
+*.tfvars
