@@ -1,7 +1,6 @@
 name = "petclinic"
 zone = "us-central1-a"
-cluster_api_name = "petclinic"
-cluster_ci_name = "jenkins"
+cluster_name = "petclinic"
 env = "dev"
 linux_admin_username = "xuplau"
 linux_admin_password = "supersecretpassworddoxuplau"
