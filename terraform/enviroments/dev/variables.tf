@@ -23,10 +23,6 @@ variable "name" {
     description = "Resource name for the GCP Cluster."
 }
 
-variable "cluster_ci_name" {
-    type = "string"
-    description = "Resource name for CI k8s Cluster."
-}
 variable "zone" {
     type = "string"
     description = "Zone for the GCP Cluster."
