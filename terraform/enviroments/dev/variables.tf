@@ -8,7 +8,7 @@ variable "linux_admin_password" {
     description = "The password for the Linux admin account."
 }
 
-variable "cluster_name" {
+variable "cluster_api_name" {
     type = "string"
     description = "Cluster name for the GCP Cluster."
 }

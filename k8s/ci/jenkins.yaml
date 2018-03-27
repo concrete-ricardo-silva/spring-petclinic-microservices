@@ -44,19 +44,27 @@ spec:
               name: jenkins
               key: options
         - name: JAVA_OPTS
-          value: '-Xmx4000m'
+          value: '-Xmx1500m'
         volumeMounts:
         - mountPath: /var/run/docker.sock
           name: docker-socket
+                volumeMounts:
+        - mountPath: /var/jenkins_home
+          name: jenkins-home
         resources:
           limits:
             cpu: 500m
-            memory: 5000Mi
+            memory: 2000Mi
           requests:
             cpu: 500m
-            memory: 5000Mi
+            memory: 2000Mi
       volumes:
       - name: docker-socket
         hostPath:
           path: /var/run/docker.sock
+      - name: jenkins-home
+        gcePersistentDisk:
+          pdName: jenkins-home
+          fsType: ext4
+          partition: 1
 # [END jenkins_deployment]

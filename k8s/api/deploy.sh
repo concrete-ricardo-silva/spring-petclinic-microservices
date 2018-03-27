@@ -9,4 +9,5 @@ kubectl create -f customers-service-deployment.yaml
 kubectl create -f tracing-server-deployment.yaml
 kubectl create -f vets-service-deployment.yaml
 kubectl create -f visits-service-deployment.yaml
-kubectl expose deployment api-gateway --type=LoadBalancer --port 80 --target-port 8080
+kubectl create -f api-gateway-service.yaml
+kubectl create -f api-gateway-ingress.yaml
