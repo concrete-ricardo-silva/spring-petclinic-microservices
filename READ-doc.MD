@@ -37,7 +37,7 @@ gcloud projects create [PROJECT_NAME]
 gcloud projects list 
 ```
 
->PROJECT_ID NAME PROJECT_NUMBER
+>PROJECT_ID NAME PROJECT_NUMBER    
 >**[PROJECT_ID]** [PROJECT_NAME] [PROJECT_NUMBER]
 ------
 
@@ -65,7 +65,7 @@ adicione a região onde deseja provisionar o projeto;
 ```
 gcloud compute regions list
 ```
-> project = "**[PROJECT_ID]**"
+> project = "**[PROJECT_ID]**"  
 > region = "**[REGION]**" 
 
 3. Criando uma conta de Serviço para dar permissões ao Terraform
