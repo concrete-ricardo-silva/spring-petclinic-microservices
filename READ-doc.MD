@@ -39,6 +39,8 @@ gcloud projects list
 
 >PROJECT_ID NAME PROJECT_NUMBER
 >**[PROJECT_ID]** [PROJECT_NAME] [PROJECT_NUMBER]
+------
+
 4. Use o **[PROJECT_ID]** informado para definir o projeto 
 
 ```
@@ -80,14 +82,18 @@ gcloud iam service-accounts keys create gce-terraform-key.json --iam-account=ter
 ### Baixando as chaves e adicionando as permissões
 
 
-1. 
-BAIXANDO JSON 
+1. Login no Portal do Google cloud
 
-PRINT
+2. Vá até APIs e Criar Credencias
 
-VIA CONSOLE CLOUD 
+3. Selecionar **Chave de conta de Serviço**
 
-2. Exportando as o arquivo do projeto
+4. Adicionar a Conta de serviço 
+
+5. Fazer download do arquivo.json
+
+
+### Exportando as credencias para uso no projeto
 ```
 export GOOGLE_CREDENTIALS=/path_to_file/[PROJECT_ID].json
 ```
@@ -101,4 +107,14 @@ export GOOGLE_CREDENTIALS=/path_to_file/[PROJECT_ID].json
 terraform init
 ``` 
 
-2.
+2. Para iniciar a checagem dos item a serem implantados ou modificados 
+```
+terraform plan 
+```
+
+3. Aplicando as configurações 
+
+```
+terraform apply
+```
+
