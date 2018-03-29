@@ -1,7 +1,7 @@
 node {
   checkout scm
   stage 'Build APPs'
-    sh 'mvn clean install -PbuildDocker -DskipTests'
+    sh 'export DOCKER_HOST=unix///var/run/docker.run && mvn clean install -PbuildDocker -DskipTests'
   stage 'Push Images'
     sh 'echo ${env.BUILD_NUMBER}' 
     sh 'docker login -u _json_key -p "$(cat /var/jenkins_home/auth.json )" https://gcr.io'
