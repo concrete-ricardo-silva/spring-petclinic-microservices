@@ -8,7 +8,7 @@ spec:
   template:
     metadata:
       labels:
-        app: master
+        app: api-gateway
     spec:
       containers:
       - command:
@@ -21,7 +21,7 @@ spec:
         - -jar
         - /app.jar
         image: gcr.io/concrete-198923/spring-petclinic-api-gateway:latest
-        name: master
+        name: api-gateway
         ports:
         - containerPort: 8080
         resources: {}
