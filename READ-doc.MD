@@ -1,6 +1,5 @@
 ## Arquitetura
 ![Arquitetura Google Cloud](https://image.ibb.co/bycuen/gcp.jpg)
-https://image.ibb.co/bycuen/gcp.jpg
 
 ------
 ### Instalando Google Cloud Sdk
