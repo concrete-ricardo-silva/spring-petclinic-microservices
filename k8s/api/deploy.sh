@@ -1,5 +1,6 @@
 #!/bin/bash
 PATH=$PATH:/var/jenkins_home/google-cloud-sdk/bin/
+gcloud container clusters get-credentials petclinic-dev --zone us-central1-a
 kubectl create -f 1-config-server-deployment.yaml
 kubectl create -f 1-config-server-service.yaml
 kubectl create -f 2-discovery-server-deployment.yaml
