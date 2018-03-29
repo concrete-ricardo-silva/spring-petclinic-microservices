@@ -6,6 +6,5 @@ node {
     sh 'docker login -u _json_key -p "$(cat /var/jenkins_home/auth.json )" https://gcr.io'
     sh 'export BUILD_NUMBER && for image in $(docker images | grep spring-petclinic | cut -f1 -d " "); do docker push $image:$BUILD_NUMBER; done'
   stage 'Deploy'
-    //sh 'bash ./k8s/api/deploy.sh'
-    //sh 'export $BUILD_NUMBER && bash ./k8s/api/deploy_update.sh'
+    sh 'export BUILD_NUMBER && bash ./k8s/api/deploy_update.sh'
   }
