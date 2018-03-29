@@ -1,4 +1,9 @@
-## Instalando Google Cloud Sdk
+## Arquitetura
+![Arquitetura Google Cloud](https://image.ibb.co/bycuen/gcp.jpg)
+https://image.ibb.co/bycuen/gcp.jpg
+
+------
+### Instalando Google Cloud Sdk
 
 baixe o instalador em:
 https://cloud.google.com/sdk/?hl=pt-br
@@ -121,4 +126,5 @@ terraform plan
 ```
 terraform apply
 ```
-
+------
+### Demonstração
