@@ -1,8 +1,8 @@
 node {
   checkout scm
-  stage 'Build APPs'
-  stage 'Push Images'
-  stage 'Deploy'
-    sh 'bash ./k8s/api/deploy.sh'
+  step 'Build APPs'
+  step 'Push Images'
+  step 'Deploy'
+    sh 'cd .k8s/api/ & kubectl create -f 1-config-server-deployment.yaml'
   
 }
