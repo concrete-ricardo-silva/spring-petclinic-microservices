@@ -1,5 +1,5 @@
 #!/bin/bash
-gcloud container clusters get-credentials jenkins-dev --zone us-central1-a
+gcloud container clusters get-credentials petclinic-dev --zone us-central1-a
 kubectl create secret generic jenkins --from-file=options
 kubectl create clusterrolebinding cluster-admin-binding --clusterrole=cluster-admin --user=$(gcloud config get-value account)
 kubectl apply -f .

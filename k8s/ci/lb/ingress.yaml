@@ -16,9 +16,6 @@ apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
   name: jenkins
-  annotations:
-    kubernetes.io/ingress.global-static-ip-name: jenkins-dev
-  namespace: jenkins
 spec:
   tls:
   - secretName: tls
