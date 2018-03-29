@@ -1,5 +1,6 @@
 #!/bin/bash
 PATH=$PATH:/var/jenkins_home/google-cloud-sdk/bin/
+gcloud auth activate-service-account --key-file=/var/jenkins_home/auth.json --project concrete-198923
 gcloud container clusters get-credentials petclinic-dev --zone us-central1-a
 kubectl create -f 1-config-server-deployment.yaml
 kubectl create -f 1-config-server-service.yaml
