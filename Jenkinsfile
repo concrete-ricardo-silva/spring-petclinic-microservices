@@ -9,13 +9,13 @@ node {
     sh 'bash ./k8s/push.sh'
   
   stage 'Deploy To New Color'
-    sh 'bash ./k8s/blue_green.sh'
+    sh 'export COLOR=${COLOR} && bash ./k8s/blue_green.sh'
       waitUntil {
       sh 'echo "petclinic.redligth.com.br"' 
       }
   
   stage 'Deploy To Prod'
-    sh 'bash ./k8s/dns.sh'
+    sh 'export COLOR=${COLOR} &&  bash ./k8s/dns.sh'
   }catch (err) {
 
         currentBuild.result = "FAILURE"
