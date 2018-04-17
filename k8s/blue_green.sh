@@ -27,7 +27,7 @@ gcloud container clusters get-credentials petclinic-$COLOR-prod --zone us-centra
 # kubectl delete deployment iuiui iuiui iuiu iuiui 
 
 # Apply Deploy Tag
-for i in $(ls templates); do cat templates/$i | sed s/latest/$BUILD_NUMBER/g | sed s/REPO/$REPO/g  >> $i; done
+for i in $(ls templates); do cat templates/$i | sed s/latest/$BUILD_NUMBER/g | sed 's/REPO/gcr.io\/acn-onboarding-devops/g'  >> $i; done
 
 # Apply Deployment
 kubectl create -f .
