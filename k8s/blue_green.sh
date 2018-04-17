@@ -7,10 +7,12 @@ if [ "$COLOR" = "blue" ]
 then
     echo "Env At Blue, setting to green"
     COLOR=green
+    OLD_COLOR=blue
 elif [ "$COLOR" = "green" ]
 then
     echo "Env at Green, setting to blue"
     COLOR=blue
+    OLD_COLOR=green
 else
     echo "Not Cool, no color defined"
     exit 1
@@ -37,7 +39,8 @@ kubectl create -f .
 # change DNS
 
 gcloud dns record-sets transaction start -z=redligth
-gcloud dns record-sets transaction add -z=redligth --name="petclinicprod.redligth.com.br." --type=CNAME --ttl=300 "petclinic$COLOR.redligth.com.br."
+gcloud dns record-sets transaction remove -z=redligth --type=CNAME --name="petclinicprod.redligth.com.br." --ttl 300 "petclinic$OLD_COLOR.redligth.com.br."
+gcloud dns record-sets transaction add -z=redligth --type=CNAME --name="petclinicprod.redligth.com.br." --ttl 300 "petclinic$COLOR.redligth.com.br."
 gcloud dns record-sets transaction execute -z=redligth
 
 
