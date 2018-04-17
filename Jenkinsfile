@@ -21,7 +21,7 @@ node {
 
     stage 'Deploy To New Color'
     try {
-        sh 'export COLOR=$(curl https://storage.googleapis.com/state-config/state) && bash ./k8s/deploy.sh'
+        sh 'bash ./k8s/deploy.sh'
     } catch (err) {
 
         currentBuild.result = "FAILURE"
@@ -30,14 +30,13 @@ node {
     }
 
     stage 'Promotion' 
-        sh 'export COLOR=$(curl https://storage.googleapis.com/state-config/state) && echo http://petclinic$COLOR.redligth.com.br./'
         input 'Deploy to Production?'
      
     
     
     stage 'Deploy To Prod'
     try {
-        sh 'export COLOR=$(curl https://storage.googleapis.com/state-config/state) && bash ./k8s/dns.sh'
+        sh 'bash ./k8s/dns.sh'
     } catch (err) {
 
         currentBuild.result = "FAILURE"
