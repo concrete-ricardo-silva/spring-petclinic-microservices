@@ -29,6 +29,12 @@ node {
         throw err
     }
 
+    stage 'Promotion' {
+        sh 'export COLOR=$(curl https://storage.googleapis.com/state-config/state) && echo http://petclinic$COLOR.redligth.com.br./'
+        input 'Deploy to Production?'
+     }
+    
+    
     stage 'Deploy To Prod'
     try {
         sh 'export COLOR=$(curl https://storage.googleapis.com/state-config/state) && bash ./k8s/dns.sh'
