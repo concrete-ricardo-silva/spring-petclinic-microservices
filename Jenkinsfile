@@ -5,5 +5,5 @@ node {
   stage 'Push Images'
     sh 'export BUILD_NUMBER && export REPO && bash ./k8s/api/push.sh'
   stage 'Deploy '
-    //sh 'export BUILD_NUMBER && bash ./k8s/api/blue_green.sh'
+    sh 'export BUILD_NUMBER && bash ./k8s/api/blue_green.sh'
 }
