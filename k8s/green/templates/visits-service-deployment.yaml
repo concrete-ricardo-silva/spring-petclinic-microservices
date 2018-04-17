@@ -27,7 +27,7 @@ spec:
         - -Djava.security.egd=file:/dev/./urandom
         - -jar
         - /app.jar
-        image: gcr.io/concrete-198923/spring-petclinic-visits-service:latest
+        image: REPO/spring-petclinic-visits-service:latest
         name: visits-service
         ports:
         - containerPort: 8082

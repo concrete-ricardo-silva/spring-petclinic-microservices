@@ -27,7 +27,7 @@ spec:
         - -Djava.security.egd=file:/dev/./urandom
         - -jar
         - /app.jar
-        image: gcr.io/concrete-198923/spring-petclinic-vets-service:latest
+        image: REPO/spring-petclinic-vets-service:latest
         name: vets-service
         ports:
         - containerPort: 8083

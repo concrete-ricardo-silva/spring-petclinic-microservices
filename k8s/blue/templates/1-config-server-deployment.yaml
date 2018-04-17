@@ -18,7 +18,7 @@ spec:
         io.kompose.service: config-server
     spec:
       containers:
-      - image: gcr.io/concrete-198923/spring-petclinic-config-server:latest
+      - image: REPO/spring-petclinic-config-server:latest
         name: config-server
         ports:
         - containerPort: 8888
