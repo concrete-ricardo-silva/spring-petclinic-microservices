@@ -30,6 +30,7 @@ node {
     }
 
     stage 'Promotion' 
+        echo 'Do the tests at New Color'
         input 'Deploy to Production?'
      
     
