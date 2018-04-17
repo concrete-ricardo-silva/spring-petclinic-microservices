@@ -1,5 +1,5 @@
 #!/bin/bash
-
+PATH=$PATH:/var/lib/jenkins/google-cloud-sdk/bin
 # Enter Env Dir
 
 cd ./k8s/$COLOR
