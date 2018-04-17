@@ -11,7 +11,7 @@ node {
   stage 'Deploy To New Color'
     sh 'bash ./k8s/blue_green.sh'
       waitUntil {
-      sh 'echo "petclinic${env.COLOR}.redligth.com.br"' 
+      sh 'echo "petclinic.redligth.com.br"' 
       }
   
   stage 'Deploy To Prod'
