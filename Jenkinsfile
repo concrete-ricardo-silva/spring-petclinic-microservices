@@ -9,7 +9,7 @@ node {
     sh 'bash ./k8s/push.sh'
   
   stage 'Deploy To New Color'
-    sh 'bash ./k8s/blue_green.sh'
+    sh 'bash ./k8s/deploy.sh'
       waitUntil {
       sh 'echo "petclinic.redligth.com.br"' 
       }
