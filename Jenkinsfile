@@ -34,10 +34,7 @@ node {
   
   stage 'Deploy To New Color'
     try {
-    sh 'bash ./k8s/blue_green.sh'
-      waitUntil {
-      sh 'echo "petclinic.redligth.com.br"' 
-      }
+    sh 'export COLOR=${COLOR} && bash ./k8s/deploy.sh'
     }catch (err) {
 
         currentBuild.result = "FAILURE"
@@ -53,7 +50,7 @@ node {
   
   stage 'Deploy To Prod'
     try {
-    sh 'bash ./k8s/dns.sh'
+    sh 'export COLOR=${COLOR} && bash ./k8s/dns.sh'
   }catch (err) {
 
         currentBuild.result = "FAILURE"
