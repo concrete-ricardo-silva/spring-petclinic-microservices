@@ -16,5 +16,4 @@ gcloud dns record-sets transaction execute -z=redligth
 echo $COLOR > state
 gsutil cp state -a public-read gs://state-config/
 rm state
-rm *deployment*
 

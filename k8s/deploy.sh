@@ -16,5 +16,5 @@ for i in $(ls templates); do cat templates/$i | sed s/latest/$BUILD_NUMBER/g | s
 
 # Apply Deployment
 kubectl create -f .
-
+rm -rf *deployment*
 
