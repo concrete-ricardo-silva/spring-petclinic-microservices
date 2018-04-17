@@ -27,7 +27,7 @@ gcloud container clusters get-credentials petclinic-$COLOR-prod --zone us-centra
 # kubectl delete deployment iuiui iuiui iuiu iuiui 
 
 # Apply Deploy Tag
-for i in $(ls templates); do cat templates/$i | sed s/latest/$BUILD_NUMBER/g  >> $i; done
+for i in $(ls templates); do cat templates/$i | sed s/latest/$BUILD_NUMBER/g | sed s/REPO/$REPO/g  >> $i; done
 
 # Apply Deployment
 kubectl create -f .
@@ -37,7 +37,7 @@ kubectl create -f .
 # change DNS
 
 gcloud dns record-sets transaction start -z=redligth
-gcloud dns record-sets transaction add -z=redligth --name="petclinicprod.redligth.com.br" --type=CNAME --ttl=300 "petclinic$COLOR.redligth.com.br"
+gcloud dns record-sets transaction add -z=redligth --name="petclinicprod.redligth.com.br." --type=CNAME --ttl=300 "petclinic$COLOR.redligth.com.br."
 gcloud dns record-sets transaction execute -z=redligth
 
 
@@ -46,5 +46,6 @@ gcloud dns record-sets transaction execute -z=redligth
 echo $COLOR > state
 gsutil cp state gs://state-config/
 rm state
+rm *deployment*
 
 
