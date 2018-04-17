@@ -31,7 +31,12 @@ node {
 
     stage 'Promotion' 
         echo 'Do the tests at New Color'
-        input 'Deploy to Production?'
+        waitUntil {
+          script {
+            def r = sh script: 'color=$(/var/lib/jenkins/google-cloud-sdk/bin/gsutil cat gs://state-config/state); if [ $color == "blue" ]; then color=green; else color=blue; fi && wget -q http://petclinic$color.redligth.com.br/ -O /dev/null', returnStatus: true
+          return (r == 0);
+       }
+    }
      
     
     
