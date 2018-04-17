@@ -1,5 +1,5 @@
 #!/bin/bash
-
+PATH=$PATH:/var/lib/jenkins/google-cloud-sdk/bin
 # change DNS
 
 gcloud dns record-sets transaction start -z=redligth
