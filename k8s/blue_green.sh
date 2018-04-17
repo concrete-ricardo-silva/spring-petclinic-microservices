@@ -1,4 +1,5 @@
 # Get Color
+PATH=$PATH:/var/lib/jenkins/google-cloud-sdk/bin
 
 COLOR=$(gsutil cat  gs://state-config/state)
 
