@@ -1,5 +1,21 @@
 #!/bin/bash
 PATH=$PATH:/var/lib/jenkins/google-cloud-sdk/bin
+COLOR=$(gsutil cat  gs://state-config/state)
+cd ./k8s/
+
+if [ "$COLOR" = "blue" ]
+then
+    echo "Env At Blue, setting to green"
+    COLOR=green
+elif [ "$COLOR" = "green" ]
+then
+    echo "Env at Green, setting to blue"
+    COLOR=blue
+else
+    echo "Not Cool, no color defined"
+    exit 1
+fi
+
 # change DNS
 
 gcloud dns record-sets transaction start -z=redligth
