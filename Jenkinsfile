@@ -1,42 +1,41 @@
 node {
-  checkout scm
-  def COLOR = sh script: 'curl https://storage.googleapis.com/state-config/state'
-  try {
-  stage 'Build APPs'
-    sh("export DOCKER_HOST=unix:///var/run/docker.sock & mvn clean install -PbuildDocker -DskipTests -DREPO=${env.REPO} -DBUILD_NUMBER=${env.BUILD_NUMBER}")
-  }catch (err) {
-
-        currentBuild.result = "FAILURE"
-
-        throw err
-  }
-  stage 'Push Images'
+    checkout scm
     try {
-    sh 'bash ./k8s/push.sh'
-    }catch (err) {
+        stage 'Build APPs'
+        sh("export DOCKER_HOST=unix:///var/run/docker.sock & mvn clean install -PbuildDocker -DskipTests -DREPO=${env.REPO} -DBUILD_NUMBER=${env.BUILD_NUMBER}")
+    } catch (err) {
 
         currentBuild.result = "FAILURE"
 
         throw err
     }
-  
-  stage 'Deploy To New Color'
+    stage 'Push Images'
     try {
-    sh 'export COLOR=${COLOR} && bash ./k8s/deploy.sh'
-    }catch (err) {
+        sh 'bash ./k8s/push.sh'
+    } catch (err) {
 
         currentBuild.result = "FAILURE"
 
         throw err
     }
-  
-  stage 'Deploy To Prod'
+
+    stage 'Deploy To New Color'
     try {
-    sh 'export COLOR=${COLOR} && bash ./k8s/dns.sh'
-  }catch (err) {
+        sh 'export COLOR=$(curl https://storage.googleapis.com/state-config/state) && bash ./k8s/deploy.sh'
+    } catch (err) {
 
         currentBuild.result = "FAILURE"
 
         throw err
     }
-  }
+
+    stage 'Deploy To Prod'
+    try {
+        sh 'export COLOR=$(curl https://storage.googleapis.com/state-config/state) && bash ./k8s/dns.sh'
+    } catch (err) {
+
+        currentBuild.result = "FAILURE"
+
+        throw err
+    }
+}
