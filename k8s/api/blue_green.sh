@@ -20,8 +20,9 @@ fi
 cd k8s/$COLOR/
 
 # Auth Cluster
+gcloud container clusters get-credentials petclinic-$COLOR-prod --zone us-central1-a
 
-kubectl get-credentials petclinic-$COLOR-prod
+#kubectl get-credentials petclinic-$COLOR-prod
 
 # Remove deployment old versions
 # kubectl delete deployment iuiui iuiui iuiu iuiui 
