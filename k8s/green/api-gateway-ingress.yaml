@@ -1,0 +1,12 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: api-gateway
+  annotations:
+    kubernetes.io/ingress.global-static-ip-name: petclinic-green-prod
+spec:
+  tls:
+  - secretName: tls-api
+  backend:
+    serviceName: api-gateway-color
+    servicePort: 8080
